@@ -1,9 +1,21 @@
-const url = "https://blog.maksym.one/wp-json/wp/v2/posts";
-async function getContent(){
-	
-		const response = await fetch(url);
-		const result = await response.json();
-		console.log(result);
-	
+
+const hamburger = document.getElementById("hamburger");
+const closeBurger = document.getElementById("close-burger");
+const navBar = document.getElementById("nav-bar");
+hamburger.addEventListener("click", () => {
+	navBar.classList.toggle("show");
+	if (navBar.classList.contains("show")){
+		hamburger.style.display = "none";
+		closeBurger.style.display = "block";
+		
+	}
 }
-getContent();
+);
+closeBurger.addEventListener("click", () => {
+navBar.classList.remove("show");
+hamburger.style.display = "block";
+closeBurger.style.display = "none";
+
+
+});
+
